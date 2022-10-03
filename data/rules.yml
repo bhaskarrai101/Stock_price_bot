@@ -1,0 +1,25 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+- rule: Say fetching stock info anytime user say single_stock_info
+  steps:
+  - intent: single_stock_info
+  - action: utter_single_reply
+
+- rule: Say fetching stock info display anytime user say stock_name
+  steps: 
+  - intent: stock_name
+  - action: utter_stock_name
+  - action: stock_tracker
